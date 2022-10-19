@@ -20,6 +20,7 @@ class FieldWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 10, left: 16, right: 16, bottom: 10),
       child: TextFormField(
+
         textAlign: TextAlign.center,
         autocorrect: true,
         obscureText: isObscure,
