@@ -20,14 +20,17 @@ class FieldWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 10, left: 16, right: 16, bottom: 10),
       child: TextFormField(
-
+        style: const TextStyle(
+          color: Colors.white,
+        ),
         textAlign: TextAlign.center,
         autocorrect: true,
         obscureText: isObscure,
         decoration: InputDecoration(
           hintText: name,
+          hintStyle: const TextStyle(color: Colors.white),
           filled: true,
-          fillColor: Colors.grey,
+          fillColor: Colors.blue,
           enabledBorder: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(8)),
             borderSide: BorderSide(color: Colors.transparent),

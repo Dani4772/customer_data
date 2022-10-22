@@ -1,4 +1,6 @@
-import 'package:customer_data/pages/homepage.dart';
+import 'package:customer_data/pages/customer_page.dart';
+import 'package:customer_data/pages/dashboard_page.dart';
+import 'package:customer_data/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home:  const DashBoard(),
     );
   }
 }

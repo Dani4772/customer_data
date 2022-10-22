@@ -25,6 +25,14 @@ class DropDownWidget extends StatelessWidget {
           child: Center(
             child: DropdownButton<String>(
                 value: choosenValue,
+                icon: const Icon(
+                  Icons.arrow_drop_down,
+                  color: Colors.white, // <-- SEE HERE
+                ),
+                dropdownColor: Colors.blue,
+                style: const TextStyle(
+                  color: Colors.white
+                ),
                 items: <String>[
                   'In Station',
                   'Out Station',
@@ -37,7 +45,7 @@ class DropDownWidget extends StatelessWidget {
                 hint: Text(
                   optionName!,
                   style: const TextStyle(
-                    color: Colors.black,
+                    color: Colors.white,
                   ),
                 ),
                 onChanged: (String? value) {

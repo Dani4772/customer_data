@@ -1,18 +1,17 @@
-import 'package:customer_data/widgets_ui/dropdown_widget.dart';
+import 'package:customer_data/pages/supplier_page.dart';
+import 'package:customer_data/providers/all_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../providers/all_screen.dart';
 import '../widgets_ui/button_widgetss.dart';
+import '../widgets_ui/dropdown_widget.dart';
 import '../widgets_ui/field_widget.dart';
-import 'customer_list.dart';
 
-
-class AddCustomer extends StatelessWidget {
-  AddCustomer({Key? key}) : super(key: key);
-
-    final _formKey = GlobalKey<FormState>();
-  TextEditingController id = TextEditingController();
+// ignore: must_be_immutable
+class AddSupplierPage extends StatelessWidget {
+   AddSupplierPage({Key? key}) : super(key: key);
+  final _formKey = GlobalKey<FormState>();
+  TextEditingController creditDays = TextEditingController();
   TextEditingController strn = TextEditingController();
   TextEditingController mobileNumber = TextEditingController();
   TextEditingController city = TextEditingController();
@@ -22,11 +21,9 @@ class AddCustomer extends StatelessWidget {
   TextEditingController name = TextEditingController();
   TextEditingController address = TextEditingController();
   TextEditingController openingBalance = TextEditingController();
-  TextEditingController shopName = TextEditingController();
   TextEditingController ntn = TextEditingController();
   String? _chosenValue;
   DateTime today = DateTime.now();
-
   @override
   Widget build(BuildContext context) {
     String dateStr = "${today.day}-${today.month}-${today.year}";
@@ -35,14 +32,14 @@ class AddCustomer extends StatelessWidget {
       child: SafeArea(
         child: Scaffold(
           appBar: AppBar(
-            title: const Text('Add Customer'),
+            title: const Text('Add Supplier'),
           ),
           body: SingleChildScrollView(
             padding:
             const EdgeInsets.only(top: 30, bottom: 10, left: 15, right: 15),
-            child: ChangeNotifierProvider<AddDataPageProvider>(
-                create: (context)=>AddDataPageProvider(),
-                child: Consumer<AddDataPageProvider>(
+            child: ChangeNotifierProvider<AddSupplierPageProvider>(
+                create: (context)=>AddSupplierPageProvider(),
+                child: Consumer<AddSupplierPageProvider>(
                   builder: (context,provider,child){
                     return Column(
                       children: [
@@ -56,12 +53,11 @@ class AddCustomer extends StatelessWidget {
                               borderRadius: BorderRadius.all(Radius.circular(8))),
                           child: const Center(
                             child: Text(
-                              'Customer ID: 1234 ',
+                              'Supplier ID:111',
                               style: TextStyle(fontSize: 15,color: Colors.white),
                             ),
                           ),
                         ),
-
                         Container(
                           margin: const EdgeInsets.only(
                               top: 10, left: 16, right: 16, bottom: 10),
@@ -78,39 +74,26 @@ class AddCustomer extends StatelessWidget {
                           ),
                         ),
 
-                        DropDownWidget(optionName: 'Customer Group Option',clr: false),
-                        DropDownWidget(optionName: 'Customer Category',clr: false,),
-                        DropDownWidget(optionName: 'Customer Brand Option',clr: false,),
-                        DropDownWidget(optionName: 'Customer City',clr: false,),
+                        DropDownWidget(optionName: 'Supplier Brand',clr: false,),
 
 
                         FieldWidget(
-                            name: 'Customer Name',
+                            name: 'Supplier Name',
                             controller: name,
                             isObscure: false,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
-                                return 'Customer Name';
+                                return 'Supplier Name';
                               }
                               return null;
                             }),
                         FieldWidget(
-                            name: 'Shop Name',
-                            controller: shopName,
+                            name: 'NTN',
+                            controller: ntn,
                             isObscure: false,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
-                                return 'Enter Shop Name';
-                              }
-                              return null;
-                            }),
-                        FieldWidget(
-                            name: 'Mobile No ',
-                            controller: mobileNumber,
-                            isObscure: false,
-                            validator: (value) {
-                              if (value == null || value.isEmpty || value.length < 12) {
-                                return 'Enter Mobile Number ';
+                                return 'Enter NTN ';
                               }
                               return null;
                             }),
@@ -125,6 +108,17 @@ class AddCustomer extends StatelessWidget {
                               return null;
                             }),
                         FieldWidget(
+                            name: 'City Name',
+                            controller: city,
+                            isObscure: false,
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Enter City Name';
+                              }
+                              return null;
+                            }),
+
+                        FieldWidget(
                             name: 'STRN',
                             controller: strn,
                             isObscure: false,
@@ -136,80 +130,30 @@ class AddCustomer extends StatelessWidget {
                             }
                         ),
                         FieldWidget(
-                            name: 'NTN',
-                            controller: ntn,
+                            name: 'Mobile No ',
+                            controller: mobileNumber,
                             isObscure: false,
                             validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Enter NTN ';
-                              }
-                              return null;
-                            }),
-                        FieldWidget(
-                            name: 'CNIC',
-                            controller: cnic,
-                            isObscure: false,
-                            validator: (value) {
-                              if (value == null || value.isEmpty || value.length < 14) {
-                                return 'Enter CNIC Number ';
-                              }
-                              return null;
-                            }),
-                        FieldWidget(
-                            name: 'Due Days',
-                            controller: dueDays,
-                            isObscure: false,
-                            validator: (value) {
-                              if (value == null || value.isEmpty ) {
-                                return 'Enter Due Days ';
-                              }
-                              return null;
-                            }),
-                        FieldWidget(
-                            name: 'Credit Limit',
-                            controller: creditLimit,
-                            isObscure: false,
-                            validator: (value) {
-                              if (value == null || value.isEmpty ) {
-                                return 'Enter Credit Limit ';
+                              if (value == null || value.isEmpty || value.length < 12) {
+                                return 'Enter Mobile Number ';
                               }
                               return null;
                             }),
 
 
-                        // Container(
-                        //   margin: const EdgeInsets.only(
-                        //       top: 10, left: 16, right: 16, bottom: 10),
-                        //   width: double.infinity,
-                        //   height: 60,
-                        //   decoration: const BoxDecoration(
-                        //       color: Colors.grey,
-                        //       borderRadius: BorderRadius.all(Radius.circular(8))),
-                        //   child: Center(
-                        //     child: DropdownButton(
-                        //         value: _chosenValue,
-                        //         items: <String>[
-                        //           'In Station',
-                        //           'Out Station',
-                        //         ].map<DropdownMenuItem<String>>((String value) {
-                        //           return DropdownMenuItem<String>(
-                        //             value: value,
-                        //             child: Text(value),
-                        //           );
-                        //         }).toList(),
-                        //         hint: const Text(
-                        //           "Select Option",
-                        //           style: TextStyle(
-                        //             color: Colors.black,
-                        //           ),
-                        //         ),
-                        //         onChanged: (String? value) {
-                        //           _chosenValue = value;
-                        //           provider.notifyListeners();
-                        //         }
-                        //     ),
-                        //   ),
-                        // ),
+
+                        FieldWidget(
+                            name: 'Credit Days',
+                            controller: creditDays,
+                            isObscure: false,
+                            validator: (value) {
+                              if (value == null || value.isEmpty ) {
+                                return 'Enter Credit Days ';
+                              }
+                              return null;
+                            }),
+
+
 
 
 
@@ -230,7 +174,7 @@ class AddCustomer extends StatelessWidget {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>  const CustomerList()));
+                                      builder: (context) =>  const SupplierPage()));
                               ScaffoldMessenger.of(context).showSnackBar(
                                   const SnackBar(
                                       content: Text('Data Saved Successfully')));
@@ -249,7 +193,3 @@ class AddCustomer extends StatelessWidget {
     );
   }
 }
-
-
-
-

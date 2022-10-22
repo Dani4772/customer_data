@@ -1,5 +1,30 @@
 import 'package:flutter/material.dart';
 
+class LogInPageProvider extends ChangeNotifier{
+  @override
+  notifyListeners();
+
+}
+
+class DashBoardPageProvider extends ChangeNotifier{
+  @override
+  notifyListeners();
+
+}
+
+class SupplierPageProvider extends ChangeNotifier{
+  @override
+  notifyListeners();
+
+}
+
+class CustomerListPageProvider extends ChangeNotifier{
+  @override
+  notifyListeners();
+
+}
+
+
 class AddDataPageProvider extends ChangeNotifier{
   @override
   notifyListeners();
@@ -16,6 +41,27 @@ class DropDownWidgetProvider with ChangeNotifier{
   notifyListeners();
 }
 
+class CustomerPageProvider with ChangeNotifier{
+  @override
+  notifyListeners();
+}
+class StockPageProvider with ChangeNotifier{
+  @override
+  notifyListeners();
+}
+
+class ReportsPageProvider with ChangeNotifier{
+  @override
+  notifyListeners();
+}
+class OrderPageProvider with ChangeNotifier{
+  @override
+  notifyListeners();
+}
+class SalesPageProvider with ChangeNotifier{
+  @override
+  notifyListeners();
+}
 
 class AddOrderProvider with ChangeNotifier{
   @override
@@ -23,6 +69,26 @@ class AddOrderProvider with ChangeNotifier{
 }
 
 class DailOrderListProvider with ChangeNotifier{
+  @override
+  notifyListeners();
+}
+class CustomerReceivePageProvider with ChangeNotifier{
+  @override
+  notifyListeners();
+}
+class CreditCustomerListPageProvider with ChangeNotifier{
+  @override
+  notifyListeners();
+}
+class AddSupplierPageProvider with ChangeNotifier{
+  @override
+  notifyListeners();
+}
+class SupplierPaymentPageProvider with ChangeNotifier{
+  @override
+  notifyListeners();
+}
+class ViewSupplierPageProvider with ChangeNotifier{
   @override
   notifyListeners();
 }

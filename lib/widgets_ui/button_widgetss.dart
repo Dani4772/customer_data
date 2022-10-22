@@ -12,6 +12,7 @@ class ButtonWidget extends StatelessWidget {
       child: ElevatedButton(
         onPressed: isOnPressed,
         style: ElevatedButton.styleFrom(
+
           fixedSize: const Size(240, 80),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
