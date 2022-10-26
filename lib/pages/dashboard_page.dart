@@ -3,13 +3,14 @@ import 'package:customer_data/pages/order_page.dart';
 import 'package:customer_data/pages/reports_page.dart';
 import 'package:customer_data/pages/sales_page.dart';
 import 'package:customer_data/pages/stock_page.dart';
+import 'package:customer_data/pages/supplier_ledger_page.dart';
 import 'package:customer_data/pages/supplier_page.dart';
 import 'package:customer_data/providers/all_screen.dart';
 import 'package:customer_data/widgets_ui/container_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
+import 'customer_ledger_page.dart';
 import 'customer_page.dart';
 import 'login_page.dart';
 
@@ -101,12 +102,21 @@ class DashBoard extends StatelessWidget {
                                               const CustomerPage()));
                                 },
                               ),
-                              Contain(
-                                  txt: 'Customer Ledger',
-                                  imageGet: Image.asset(
-                                    'assets/images/2.png',
-                                    height: 100,
-                                  )),
+                              InkWell(
+                                onTap: (){
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                           CustomerLedgerPage()));
+                                },
+                                child: Contain(
+                                    txt: 'Customer Ledger',
+                                    imageGet: Image.asset(
+                                      'assets/images/ledger.png',
+                                      height: 100,
+                                    )),
+                              ),
                             ],
                           ),
                           Padding(
@@ -125,16 +135,25 @@ class DashBoard extends StatelessWidget {
                                   child: Contain(
                                       txt: 'Supplier',
                                       imageGet: Image.asset(
-                                        'assets/images/3.png',
+                                        'assets/images/supplier.png',
                                         height: 100,
                                       )),
                                 ),
-                                Contain(
-                                    txt: 'Supplier Ledger',
-                                    imageGet: Image.asset(
-                                      'assets/images/6.png',
-                                      height: 100,
-                                    )),
+                                InkWell(
+                                  onTap: (){
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                             SupplierLedgerPage()));
+                                  },
+                                  child: Contain(
+                                      txt: 'Supplier Ledger',
+                                      imageGet: Image.asset(
+                                        'assets/images/6.png',
+                                        height: 100,
+                                      )),
+                                ),
                               ],
                             ),
                           ),
@@ -145,7 +164,7 @@ class DashBoard extends StatelessWidget {
                                 child: Contain(
                                     txt: 'Order',
                                     imageGet: Image.asset(
-                                      'assets/images/4.png',
+                                      'assets/images/order.png',
                                       height: 100,
                                     )),
                                 onTap: () {
@@ -167,7 +186,7 @@ class DashBoard extends StatelessWidget {
                                 child: Contain(
                                     txt: 'Sales',
                                     imageGet: Image.asset(
-                                      'assets/images/5.png',
+                                      'assets/images/sales.png',
                                       height: 100,
                                     )),
                               ),
@@ -189,7 +208,7 @@ class DashBoard extends StatelessWidget {
                                   child: Contain(
                                       txt: 'Stock',
                                       imageGet: Image.asset(
-                                        'assets/images/4.png',
+                                        'assets/images/stock.png',
                                         height: 100,
                                       )),
                                 ),
@@ -204,7 +223,7 @@ class DashBoard extends StatelessWidget {
                                   child: Contain(
                                       txt: 'Reports',
                                       imageGet: Image.asset(
-                                        'assets/images/5.png',
+                                        'assets/images/report.png',
                                         height: 100,
                                       )),
                                 ),

@@ -6,11 +6,11 @@ import '../providers/all_screen.dart';
 class DropDownWidget extends StatelessWidget {
   String? optionName;
   bool? clr;
-  DropDownWidget({Key? key,required this.optionName,this.clr}) : super(key: key);
+  String? choosenValue;
+  DropDownWidget({Key? key,required this.optionName,this.clr,this.choosenValue,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    String? choosenValue;
 
     return ChangeNotifierProvider<DropDownWidgetProvider>(create: (context)=>DropDownWidgetProvider(),
     child: Consumer<DropDownWidgetProvider>(builder: (context,provider,child){
@@ -20,11 +20,13 @@ class DropDownWidget extends StatelessWidget {
           width: double.infinity,
           height: 60,
           decoration:  BoxDecoration(
-              color: clr==true?Colors.grey:Colors.blue,
+              color: clr==true?Colors.pink:Colors.blue,
               borderRadius: const BorderRadius.all(Radius.circular(8))),
+
           child: Center(
             child: DropdownButton<String>(
                 value: choosenValue,
+                underline: const SizedBox(),
                 icon: const Icon(
                   Icons.arrow_drop_down,
                   color: Colors.white, // <-- SEE HERE
@@ -34,8 +36,10 @@ class DropDownWidget extends StatelessWidget {
                   color: Colors.white
                 ),
                 items: <String>[
-                  'In Station',
-                  'Out Station',
+                  'Adnan',
+                  'Farhan',
+                  'Hamza',
+                  'Ali',
                 ].map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,

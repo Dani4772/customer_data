@@ -83,8 +83,8 @@ class CustomerPage extends StatelessWidget {
                                 child: Contain(
                                     txt: 'Add Customer',
                                     imageGet: Image.asset(
-                                      'assets/images/1.png',
-                                      height: 100,
+                                      'assets/images/addcustomer.png',
+                                      height: 90,
                                     )),
                                 onTap: () {
                                   Navigator.push(
@@ -97,7 +97,7 @@ class CustomerPage extends StatelessWidget {
                                 child: Contain(
                                     txt: 'View Customer',
                                     imageGet: Image.asset(
-                                      'assets/images/2.png',
+                                      'assets/images/viewcustomer.png',
                                       height: 100,
                                     )),
                                 onTap: () {
@@ -126,7 +126,7 @@ class CustomerPage extends StatelessWidget {
                                   child: Contain(
                                       txt: 'Customer Receive',
                                       imageGet: Image.asset(
-                                        'assets/images/3.png',
+                                        'assets/images/customerreceive.png',
                                         height: 100,
                                       )),
                                 ),
@@ -141,7 +141,7 @@ class CustomerPage extends StatelessWidget {
                                   child: Contain(
                                       txt: 'Credit Customers',
                                       imageGet: Image.asset(
-                                        'assets/images/6.png',
+                                        'assets/images/creditcustomer.png',
                                         height: 100,
                                       )),
                                 ),

@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../widgets_ui/container_widget.dart';
-import 'add_order_page.dart';
-import 'daily_order_list_page.dart';
+
 
 class SalesPage extends StatelessWidget {
   const SalesPage({Key? key}) : super(key: key);
@@ -77,29 +76,29 @@ class SalesPage extends StatelessWidget {
                                 child: Contain(
                                     txt: 'Add Sales',
                                     imageGet: Image.asset(
-                                      'assets/images/1.png',
+                                      'assets/images/addsalest.png',
                                       height: 100,
                                     )),
                                 onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => AddOrder()));
-                                },
+                                //   Navigator.push(
+                                //       context,
+                                //       MaterialPageRoute(
+                                //           builder: (context) => AddOrder()));
+                                 },
                               ),
                               InkWell(
                                 child: Contain(
                                     txt: 'View Sales',
                                     imageGet: Image.asset(
-                                      'assets/images/2.png',
+                                      'assets/images/viewsales.png',
                                       height: 100,
                                     )),
                                 onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                          const DailyOrderListPage()));
+                                  // Navigator.push(
+                                  //     context,
+                                  //     MaterialPageRoute(
+                                  //         builder: (context) =>
+                                  //         const DailyOrderListPage()));
                                 },
                               ),
                             ],

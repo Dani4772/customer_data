@@ -79,7 +79,7 @@ class ReportsPage extends StatelessWidget {
                                 child: Contain(
                                     txt: 'Daily Sale Report',
                                     imageGet: Image.asset(
-                                      'assets/images/1.png',
+                                      'assets/images/dailysale.png',
                                       height: 100,
                                     )),
                                 onTap: () {
@@ -93,7 +93,7 @@ class ReportsPage extends StatelessWidget {
                               Contain(
                                   txt: 'Purchase Report',
                                   imageGet: Image.asset(
-                                    'assets/images/2.png',
+                                    'assets/images/purchasereport.png',
                                     height: 100,
                                   )),
                             ],
@@ -114,14 +114,14 @@ class ReportsPage extends StatelessWidget {
                                   child: Contain(
                                       txt: 'Profit Report',
                                       imageGet: Image.asset(
-                                        'assets/images/3.png',
+                                        'assets/images/profitreport.png',
                                         height: 100,
                                       )),
                                 ),
                                 Contain(
                                     txt: 'Sale Bilty',
                                     imageGet: Image.asset(
-                                      'assets/images/6.png',
+                                      'assets/images/salebilty.png',
                                       height: 100,
                                     )),
                               ],
@@ -134,7 +134,7 @@ class ReportsPage extends StatelessWidget {
                                 child: Contain(
                                     txt: 'Purchase Bilty',
                                     imageGet: Image.asset(
-                                      'assets/images/4.png',
+                                      'assets/images/purchasebilty.png',
                                       height: 100,
                                     )),
                                 onTap: () {
@@ -156,7 +156,7 @@ class ReportsPage extends StatelessWidget {
                                 child: Contain(
                                     txt: 'Today Customer  Reciepts',
                                     imageGet: Image.asset(
-                                      'assets/images/5.png',
+                                      'assets/images/todaycustomer.png',
                                       height: 100,
                                     )),
                               ),
@@ -178,14 +178,14 @@ class ReportsPage extends StatelessWidget {
                                   child: Contain(
                                       txt: 'Due Report',
                                       imageGet: Image.asset(
-                                        'assets/images/4.png',
+                                        'assets/images/duereport.png',
                                         height: 100,
                                       )),
                                 ),
                                 Contain(
                                     txt: 'Sale Report By Brands',
                                     imageGet: Image.asset(
-                                      'assets/images/5.png',
+                                      'assets/images/salebrandreport.png',
                                       height: 100,
                                     )),
                               ],

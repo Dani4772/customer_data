@@ -80,7 +80,7 @@ class SupplierPage extends StatelessWidget {
                                 child: Contain(
                                     txt: 'Add Supplier',
                                     imageGet: Image.asset(
-                                      'assets/images/1.png',
+                                      'assets/images/addsupplier.png',
                                       height: 100,
                                     )),
                                 onTap: (){
@@ -92,7 +92,7 @@ class SupplierPage extends StatelessWidget {
                                 child: Contain(
                                     txt: 'View Supplier',
                                     imageGet: Image.asset(
-                                      'assets/images/2.png',
+                                      'assets/images/viewsupplier.png',
                                       height: 100,
                                     )),
                                 onTap: (){
@@ -114,7 +114,7 @@ class SupplierPage extends StatelessWidget {
                                   child: Contain(
                                       txt: 'Supplier Payment',
                                       imageGet: Image.asset(
-                                        'assets/images/3.png',
+                                        'assets/images/supplierpayment.png',
                                         height: 100,
                                       )),
                                 ),

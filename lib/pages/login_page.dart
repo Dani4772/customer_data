@@ -1,8 +1,15 @@
+import 'dart:convert';
+
+import 'package:customer_data/models/login_page_model.dart';
 import 'package:customer_data/pages/dashboard_page.dart';
 import 'package:customer_data/providers/all_screen.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
+import '../local_service/local_service.dart';
+import '../services/api_service.dart';
 import '../widgets_ui/field_widget.dart';
 import 'customer_page.dart';
 
@@ -11,7 +18,11 @@ class LogInPage extends StatelessWidget {
   final email = TextEditingController();
   final password = TextEditingController();
   final _formKey = GlobalKey<FormState>();
-  @override
+
+  int index=1;
+   static const baseUrl = 'http://raheemagency.b2bdigitize.com';
+
+   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<LogInPageProvider>(create: (context)=>LogInPageProvider(),
     child: Consumer<LogInPageProvider>(
@@ -44,7 +55,7 @@ class LogInPage extends StatelessWidget {
                     },
                   ),
 
-                  FieldWidget(controller: password,isObscure: true,name:
+                  FieldWidget(controller: password,isObscure: false,name:
                   'Enter Password',
                     validator: (value) {
                       if (value == null || value.isEmpty || value.length <6) {
@@ -53,19 +64,41 @@ class LogInPage extends StatelessWidget {
                       return null;
                     },
                   ),
-
-
-
                   InkWell(
-                    onTap: () {
+                    onTap: () async {
                       if (_formKey.currentState!.validate()) {
+                        print('hhhh');
+
+
+                      final response=
+                      await Dio().get('$baseUrl/api?email=${email.text}&password=${password.text}');
+                        print('response: ${response.data}');
+                        final jsonData = jsonDecode(response.data);
+                        print("message:${jsonData['response']['message']}");
+                        if(jsonData['response']['message'] == 'Successfully login') {
+                          // ignore: use_build_context_synchronously
                           Navigator.pushAndRemoveUntil(
                             context,
-                            MaterialPageRoute(builder: (context) =>  DashBoard()),
+                            MaterialPageRoute(
+                                builder: (context) => const DashBoard()),
                                 (Route<dynamic> route) => false,
                           );
-                          provider.notifyListeners();
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Log In Successfully'),
+                            ),
+                          );
                         }
+                        else{
+                          // ignore: use_build_context_synchronously
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Wrong email or Password'),
+                            ),
+                          );
+                        }
+                        }
+
 
                     },
                     child: Container(
@@ -95,3 +128,5 @@ class LogInPage extends StatelessWidget {
     );
   }
 }
+
+

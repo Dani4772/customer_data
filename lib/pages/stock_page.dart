@@ -77,7 +77,7 @@ class StockPage extends StatelessWidget {
                                 child: Contain(
                                     txt: 'Stock Report',
                                     imageGet: Image.asset(
-                                      'assets/images/1.png',
+                                      'assets/images/stockreportt.png',
                                       height: 100,
                                     )),
                                 onTap: () {
@@ -91,7 +91,7 @@ class StockPage extends StatelessWidget {
                                 child: Contain(
                                     txt: 'Report By Brand',
                                     imageGet: Image.asset(
-                                      'assets/images/2.png',
+                                      'assets/images/brandreport.png',
                                       height: 100,
                                     )),
                                 onTap: () {

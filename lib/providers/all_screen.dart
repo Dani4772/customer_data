@@ -58,6 +58,15 @@ class OrderPageProvider with ChangeNotifier{
   @override
   notifyListeners();
 }
+
+class OrderSummaryProvider with ChangeNotifier{
+  @override
+  notifyListeners();
+}
+class CustomerLedgerPageProvider with ChangeNotifier{
+  @override
+  notifyListeners();
+}
 class SalesPageProvider with ChangeNotifier{
   @override
   notifyListeners();
@@ -85,6 +94,10 @@ class AddSupplierPageProvider with ChangeNotifier{
   notifyListeners();
 }
 class SupplierPaymentPageProvider with ChangeNotifier{
+  @override
+  notifyListeners();
+}
+class SupplierLedgerPageProvider with ChangeNotifier{
   @override
   notifyListeners();
 }

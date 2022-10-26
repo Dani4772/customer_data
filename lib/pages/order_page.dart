@@ -1,5 +1,6 @@
 import 'package:customer_data/pages/add_order_page.dart';
 import 'package:customer_data/pages/daily_order_list_page.dart';
+import 'package:customer_data/pages/order_summary_page.dart';
 import 'package:customer_data/providers/all_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -69,6 +70,7 @@ class OrderPage extends StatelessWidget {
                       left: 25,
                       right: 25,
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -77,7 +79,7 @@ class OrderPage extends StatelessWidget {
                                 child: Contain(
                                     txt: 'Add Order',
                                     imageGet: Image.asset(
-                                      'assets/images/1.png',
+                                      'assets/images/addorder.png',
                                       height: 100,
                                     )),
                                 onTap: () {
@@ -91,7 +93,7 @@ class OrderPage extends StatelessWidget {
                                 child: Contain(
                                     txt: 'View Order',
                                     imageGet: Image.asset(
-                                      'assets/images/2.png',
+                                      'assets/images/vieworder.png',
                                       height: 100,
                                     )),
                                 onTap: () {
@@ -103,6 +105,24 @@ class OrderPage extends StatelessWidget {
                                 },
                               ),
                             ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 20),
+                            child: InkWell(
+                              child: Contain(
+                                  txt: 'Order Summary',
+                                  imageGet: Image.asset(
+                                    'assets/images/ordersummary.png',
+                                    height: 100,
+                                  )),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                         OrderSummaryPage()));
+                              },
+                            ),
                           ),
                         ],
                       ),
